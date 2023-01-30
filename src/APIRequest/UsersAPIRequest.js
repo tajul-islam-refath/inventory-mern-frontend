@@ -24,15 +24,16 @@ export async function LoginRequest(email, password) {
 
     let res = await axios.post(URL, PostBody);
 
-    console.log(res);
-    setToken(res.data["token"]);
-
-    setUserDetails(res.data["data"]);
-
-    SuccessToast("Login Success");
-
     store.dispatch(HideLoader());
 
+    if (res.data["status"] === "unauthorized") {
+      ErrorToast("Unauthorized");
+      return false;
+    }
+
+    setToken(res.data["token"]);
+    setUserDetails(res.data["data"]);
+    SuccessToast("Login Success");
     return true;
   } catch (e) {
     store.dispatch(HideLoader());

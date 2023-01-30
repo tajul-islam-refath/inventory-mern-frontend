@@ -18,7 +18,7 @@ const Login = () => {
     } else {
       let result = await LoginRequest(email, pass);
       if (result) {
-        // window.location.href = "/";
+        window.location.href = "/";
       }
     }
   };
