@@ -27,7 +27,7 @@ export async function LoginRequest(email, password) {
     store.dispatch(HideLoader());
 
     if (res.data["status"] === "unauthorized") {
-      ErrorToast("Unauthorized");
+      ErrorToast("Email or password not valid");
       return false;
     }
 
