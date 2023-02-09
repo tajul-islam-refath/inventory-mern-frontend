@@ -8,9 +8,9 @@ import {
   SetProductDropDown,
   SetSaleList,
   SetSaleListTotal,
+  ResetSaleFormValue,
 } from "../redux/state-slice/sale-slice";
 import { BaseURL } from "../helper/config";
-import { ResetProductFormValue } from "../redux/state-slice/product-slice";
 const AxiosHeader = { headers: { token: getToken() } };
 
 export async function SaleListRequest(pageNo, perPage, searchKeyword) {
@@ -48,7 +48,7 @@ export async function CreateSaleRequest(PostBody) {
     store.dispatch(HideLoader());
     if (result.status === 200 && result.data["status"] === "success") {
       SuccessToast("Request Successful");
-      store.dispatch(ResetProductFormValue());
+      store.dispatch(ResetSaleFormValue());
       return true;
     } else {
       ErrorToast("Request Fail ! Try Again");

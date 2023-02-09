@@ -39,7 +39,7 @@ export const saleSlice = createSlice({
     RemoveSaleItem: (state, action) => {
       state.SaleItemList.splice(action.payload, 1);
     },
-    ResetProductFormValue: (state, action) => {
+    ResetSaleFormValue: (state, action) => {
       Object.keys(state.SaleFormValue).forEach(
         (i) => (state.SaleFormValue[i] = "")
       );
@@ -55,5 +55,6 @@ export const {
   SetSaleItemList,
   SetSaleListTotal,
   SetCustomerDropDown,
+  ResetSaleFormValue,
 } = saleSlice.actions;
 export default saleSlice.reducer;
