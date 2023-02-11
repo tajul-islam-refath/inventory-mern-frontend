@@ -45,12 +45,16 @@ const SalesCreateUpdate = () => {
     let qtyValue = qtyRef.value;
     let unitPriceValue = unitPriceRef.value;
 
+    let product = ProductDropDown.find((p) => p._id == productValue);
+    console.log(product);
     if (IsEmpty(productValue)) {
       ErrorToast("Select Product");
     } else if (IsEmpty(qtyValue)) {
       ErrorToast("Qty Required");
     } else if (IsEmpty(unitPriceValue)) {
       ErrorToast("Unit Price Required");
+    } else if (product.Stock < parseInt(qtyValue)) {
+      ErrorToast(`You have only ${product.Stock} product in stock`);
     } else {
       let item = {
         ProductID: productValue,
