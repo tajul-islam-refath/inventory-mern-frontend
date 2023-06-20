@@ -38,47 +38,24 @@ The app allows :
 Clone the repository
 
 ```bash
-git clone git@github.com:tajul-islam-refath/inventory-mern-backend.git
+git clone git@github.com:tajul-islam-refath/inventory-mern-frontend.git
 ```
 
 Change directory to the project root
 
 ```bash
-cd inventory-mern-backend
-```
-
-create environment variable file from example file
-
-```bash
-cp .env.example
-
-DB_USER = your mongodb database username
-DB_PASS = your mongodb database password
-
-my_email= email using for sending otp
-email_password= email password
-
+cd inventory-mern-frontend
 ```
 
 Start the app
 
 ```bash
-npm run server
-```
-
-Run test script
-
-```
- npm run test
+npm run start
 ```
 
 This means the app is ready to be used.
 
-The app REST API will be available at http://localhost:5050/api/v1/
-
 The Postman documation will be available [here](https://documenter.getpostman.com/view/22821036/2s935hS7uk)
-
-#### Base URL for the API `http://localhost:5050/api/v1/`
 
 # Conclusion
 
